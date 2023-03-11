@@ -19,16 +19,41 @@ body {
 }
 
 .content-wrapper {
-  padding: 10%;
+  padding: 10% 0;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  max-width: 900px;
+  max-width: 600px;
   height: 100vh;
+}
+
+.content-wrapper:hover .tab-item,
+.tab-item[open] {
+  color: #000;
+}
+
+.content-wrapper:hover .tab-close-icon {
+  visibility: visible;
 }
 
 .tab-item {
   padding: 5% 0;
   border-top: 1px solid #aaaaa3;
   font-size: 1.5em;
+  color: #7b35e6;
+  cursor: pointer;
+}
+
+.tab-title {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-close-icon {
+  visibility: hidden;
+}
+
+.tab-item[open] .tab-close-icon {
+  transform: rotate(45deg);
 }
