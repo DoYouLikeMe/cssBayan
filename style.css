@@ -32,15 +32,12 @@ body {
   color: #000;
 }
 
-.content-wrapper:hover .tab-close-icon {
-  visibility: visible;
-}
-
 .tab-item {
   border-top: 1px solid #aaaaa3;
   font-size: 1.5em;
   color: #7b35e6;
   cursor: pointer;
+  transition: 0.2s ease-in;
 }
 
 .tab-title {
@@ -48,11 +45,17 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2%;
-  padding: 5% 0;
+  padding: 5% 2%;
+  flex-wrap: wrap;
 }
 
 .tab-close-icon {
   visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.content-wrapper:hover .tab-close-icon {
+  visibility: visible;
 }
 
 .tab-item[open] .tab-close-icon {
@@ -61,4 +64,10 @@ body {
 
 .tab-content {
   text-align: center;
+  transform: scale(-100%);
+  transition: 0.5s ease-in;
+}
+
+.tab-item[open] .tab-content {
+  transform: scale(100%);
 }
